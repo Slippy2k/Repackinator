@@ -187,25 +187,12 @@ namespace Repackinator.UI
                           Matrix4x4.CreateRotationZ((float)ConvertToRadians(sin));
         }
 
-        private void PlayModule()
-        {
-            Bass.Init();
-            var musicData = ResourceLoader.GetEmbeddedResourceBytes("Stuart Wilson - Not Another Comic Bakery Remix.mp3", typeof(CreditsDialog).GetTypeInfo().Assembly);
-            m_playBackHandle = Bass.CreateStream(musicData, 0, musicData.Length, BassFlags.Default | BassFlags.Loop);
-            Bass.ChannelPlay(m_playBackHandle);
-
-            m_signalProvider = new SignalProvider(DataFlags.FFT1024, true, true) { WindowType = WindowType.Hanning, };
-            m_signalProvider.SetChannel(m_playBackHandle);
-        }
-
         public bool Render()
         {
             if (_showModal)
             {
                 _showModal = false;
                 _open = true;
-
-                PlayModule();
 
                 ImGui.OpenPopup(Title);
             }

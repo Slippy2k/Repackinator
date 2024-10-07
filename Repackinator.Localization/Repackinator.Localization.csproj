@@ -11,9 +11,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UserLocale.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Language\UserLocale.nb-NO.resx">
-      <DependentUpon>UserLocale.resx</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
